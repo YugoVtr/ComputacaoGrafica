@@ -37,7 +37,7 @@ def displayBird( x, y, flag ):
     glPolygonMode(GL_FRONT_AND_BACK, flag)
     glColor3f(RED, GREEN, BLUE)
     glBegin(GL_POLYGON)
-    with open("json/bird.json") as file:
+    with open("json/dog.json") as file:
         coordinates = json.load(file)
         for coordinate in coordinates:
             x1 = float( coordinate['value'].split(',')[0] ) * SCALE + x
@@ -46,8 +46,7 @@ def displayBird( x, y, flag ):
     glEnd()
 
 def keyboard(key, x, y):
-    key = int.from_bytes(key, "big")
-    if key == 27:
+    if ord(key) == 27:
         sys.exit(0)
 
 if __name__ == "__main__":
