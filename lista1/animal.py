@@ -37,7 +37,7 @@ def displayBird( x, y, flag ):
     glPolygonMode(GL_FRONT_AND_BACK, flag)
     glColor3f(RED, GREEN, BLUE)
     glBegin(GL_POLYGON)
-    with open("json/dog.json") as file:
+    with open("json/bird.json") as file:
         coordinates = json.load(file)
         for coordinate in coordinates:
             x1 = float( coordinate['value'].split(',')[0] ) * SCALE + x
