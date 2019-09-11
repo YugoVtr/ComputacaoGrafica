@@ -1,3 +1,6 @@
+#!/usr/bin/env python2.*
+# -*- coding: utf-8 -*-
+
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *

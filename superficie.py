@@ -1,3 +1,6 @@
+#!/usr/bin/env python2.*
+# -*- coding: utf-8 -*-
+
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
@@ -27,10 +30,12 @@ def main():
 	knots = array( (0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0),'f' )
 
 	glutInit(sys.argv)
+	glutInitWindowSize(800, 700)
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH)
 	global context
 	context = glutCreateWindow('Superficie')
 	glutSetWindow( context )
+	glutKeyboardFunc(keyboard)
 
 	nurb = gluNewNurbsRenderer()
 	# get a really good sampling
@@ -83,7 +88,6 @@ def main():
 				else:
 					# Pull up back middle and right squares.
 					pts4[u][v][2] = 5.0
-
 
 	# Stretch up red's far right corner.
 	pts1[3][3][2] = 6.0
@@ -140,6 +144,10 @@ def main():
 	glEndList()
 
 	glutDisplayFunc(display)
+    
+def keyboard(key, x, y):
+    if ord(key) == 27:
+        sys.exit(0)
 
 if __name__ == '__main__':
 	main()

@@ -1,7 +1,11 @@
+#!/usr/bin/env python2.*
+# -*- coding: utf-8 -*-
+
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
 import sys, random, json
+from const import JSON_PATH
 
 WIDTH = 800
 HEIGHT = 400
@@ -31,7 +35,7 @@ def initRGB():
 def display():
     glClear(GL_COLOR_BUFFER_BIT)
 
-    with open("json/letters.json") as file:
+    with open("{0}/letters.json".format(JSON_PATH)) as file:
         letters = json.load(file)
         for letter in letters:
             glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)

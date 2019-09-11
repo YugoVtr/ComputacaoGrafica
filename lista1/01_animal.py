@@ -1,7 +1,11 @@
+#!/usr/bin/env python2.*
+# -*- coding: utf-8 -*-
+
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
-import sys, json
+import sys, json, os
+from const import JSON_PATH
 
 WIDTH = 800
 HEIGHT = 400
@@ -37,7 +41,8 @@ def displayBird( x, y, flag ):
     glPolygonMode(GL_FRONT_AND_BACK, flag)
     glColor3f(RED, GREEN, BLUE)
     glBegin(GL_POLYGON)
-    with open("json/bird.json") as file:
+    dirpath = os.getcwd()
+    with open("{0}/bird.json".format(JSON_PATH)) as file:
         coordinates = json.load(file)
         for coordinate in coordinates:
             x1 = float( coordinate['value'].split(',')[0] ) * SCALE + x
