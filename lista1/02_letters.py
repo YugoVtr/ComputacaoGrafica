@@ -55,8 +55,7 @@ def display():
         glutSwapBuffers()
 
 def keyboard(key, x, y):
-    key = int.from_bytes(key, "big")
-    if key == 27:
+    if ord(key) == 27:
         sys.exit(0)
 
 def mouse(button, state, x, y):
