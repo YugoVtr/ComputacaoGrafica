@@ -67,7 +67,6 @@ def main():
 	# get a really good sampling
 	gluNurbsProperty(nurb, GLU_SAMPLING_TOLERANCE, 5.0)
 	gluNurbsProperty(nurb, GLU_DISPLAY_MODE, GLU_FILL)
-#	gluNurbsProperty(nurb, GLU_DISPLAY_MODE, GLU_OUTLINE_POLYGON)
 
 
 	# Build control points for NURBS mole hills.
