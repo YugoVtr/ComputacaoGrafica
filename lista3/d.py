@@ -29,35 +29,33 @@ def display():
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE)
     glColor3f(0., 0., 0.)
 
-    draw_c()
+    draw_d()
     
     glFlush()
     glutSwapBuffers()
     
-def draw_c():
+def draw_d():
     x, y = WIDTH // 2, HEIGHT // 2
-    objeto_c(x,y,2)
+    objeto_d(x,y,2)
     glPushMatrix()
     glTranslatef(x,y,0)
     glRotatef(60,0,0,1)
     glTranslatef(-x,-y,0)
-    objeto_c(10, 220, 2)
+    objeto_d(10, 220, 2)
     glPopMatrix()
 
-def objeto_c(x,y,e):
+def objeto_d(x,y,e):
     glBegin(GL_POLYGON)
-    glVertex2i(x + 10 * e, y + 10 * e)
-    glVertex2i(x + 40 * e, y + 40 * e)
-    glVertex2i(x + 20 * e, y + 40 * e)
-    glVertex2i(x + 40 * e, y + 60 * e)
-    glVertex2i(x + 30 * e, y + 60 * e)
-    glVertex2i(x + 50 * e, y + 80 * e)
-    glVertex2i(x + 60 * e, y + 80 * e)
-    glVertex2i(x + 80 * e, y + 60 * e)
-    glVertex2i(x + 70 * e, y + 60 * e)
-    glVertex2i(x + 90 * e, y + 40 * e)
-    glVertex2i(x + 70 * e, y + 40 * e)
-    glVertex2i(x + 100 * e, y + 10 * e)
+    glVertex2i(x + 35 * e, y + 10 * e)
+    glVertex2i(x + 20 * e, y + 50 * e)
+    glVertex2i(x + 55 * e, y + 75 * e)
+    glVertex2i(x + 90 * e, y + 50 * e)
+    glVertex2i(x + 75 * e, y + 10 * e)
+    glVertex2i(x + 35 * e, y + 10 * e)
+    glVertex2i(x + 55 * e, y + 75 * e)
+    glVertex2i(x + 75 * e, y + 10 * e)
+    glVertex2i(x + 20 * e, y + 50 * e)
+    glVertex2i(x + 90 * e, y + 50 * e)
     glEnd()
 
 def keyboard(key, x, y):
